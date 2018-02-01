@@ -75,7 +75,7 @@ __webpack_require__(1);
 var greeter = __webpack_require__(6);
 function test() {
 	var a = 1;
-	console.log(a, 1);
+	console.log(a, 3);
 	document.getElementById("greeter").appendChild(greeter());
 }
 test();

@@ -1,14 +1,17 @@
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
 	// devtool: 'eval-source-map',
 	entry:  __dirname + "/src/main.js",//唯一入口文件
 	output: {
-	  path: __dirname + "/dist/js",//打包后的文件存放的地方
+	  path: __dirname + "/build",//打包后的文件存放的地方
 	  filename: "bundle.js"//打包后输出文件的文件名
 	},
 	devServer: {
-	  contentBase: "./dist",//本地服务器所加载的页面所在的目录
-	  historyApiFallback: true,//不跳转
-	  inline: true//实时刷新
+	  contentBase: "./build",//本地服务器所加载的页面所在的目录
+	  inline: true,//实时刷新
+	  port: 3000
 	},
 	module: {
         rules: [
@@ -28,7 +31,16 @@ module.exports = {
                         loader: "css-loader"
                     }
                 ]
+            },
+            {
+              test: /\.less$/,
+              loader: 'style-loader!css-loader!less-loader'
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: __dirname + "/src/index.html"//插件，用于生成与入口js同名html，并且修改源码立刻生效
+        })
+    ]
 }
