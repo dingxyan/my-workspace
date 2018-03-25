@@ -42,5 +42,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: __dirname + "/src/index.html"//插件，用于生成与入口js同名html，并且修改源码立刻生效
         })
-    ]
+    ],
+    resolve: {
+        alias: {
+          'vue': 'vue/dist/vue.esm.js' 
+        }
+    }
 }

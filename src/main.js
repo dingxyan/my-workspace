@@ -1,10 +1,40 @@
 import './css/main.css';
-import './css/base.less';
+// import './css/base.less';
+import Vue from 'vue';
 
-const greeter = require("./js/Greeter.js");
-function test(){
-	let a = 1;
-	console.log(a,4)
-	document.getElementById("greeter").appendChild(greeter());
-}
-test();
+var aa = require('./js/test.js');
+
+
+Vue.component('child',{
+	template: '<div>{{msg}}</div>',
+	props:['msg']
+});
+
+Vue.component('my-comp',{
+	template:'<div><input v-model="msg1"><child :msg="msg1"></child></div>',
+	data: function(){
+		return {
+			msg1:"asd"
+		};
+	}
+});
+
+let myVue = new Vue({
+	el: "#myvue",
+	template: '<my-comp></my-comp>'
+});
+
+Vue.component('my-comp2',{
+	template: '<span></span>'
+});
+
+
+
+
+
+
+
+
+
+
+
