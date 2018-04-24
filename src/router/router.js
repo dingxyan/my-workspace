@@ -27,7 +27,7 @@ const routes = [
 ]
 
 var router =  new VueRouter({
-    mode: "history",// 去掉#号
+    // mode: "history",// 去掉#号
     routes
 })
 export default router;

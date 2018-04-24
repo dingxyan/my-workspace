@@ -11,10 +11,10 @@ import App from './App.vue';
 var aa = require('./js/test.js');
 
 
-// Vue.component('child',{
-// 	template: '<div>{{msg}}</div>',
-// 	props:['msg']
-// });
+Vue.component('child',{
+	template: '<div>{{msg}}</div>',
+	props:['msg']
+});
 
 // Vue.component('my-comp',{
 // 	template:'<div><input v-model="msg1"><child :msg="msg1"></child></div>',
@@ -28,7 +28,9 @@ var aa = require('./js/test.js');
 let myVue = new Vue({
 	el: "#app",
 	router,
-	render: h => h(App)
+	// render: h => h(App)
+	template: '<my-App/>',
+  	components: {"my-App":App}
 });
 
 
