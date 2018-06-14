@@ -28,7 +28,12 @@ Vue.component('my-comp2',{
 	template: '<span></span>'
 });
 
+function dedupe(arr) {
+	return Array.from(new Set(arr));
+}
 
+var arr = dedupe([1,2,3,1,2,3]);
+console.log(arr);
 
 
 

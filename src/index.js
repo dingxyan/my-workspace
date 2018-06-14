@@ -16,14 +16,6 @@ Vue.component('child',{
 	props:['msg']
 });
 
-// Vue.component('my-comp',{
-// 	template:'<div><input v-model="msg1"><child :msg="msg1"></child></div>',
-// 	data: function(){
-// 		return {
-// 			msg1:"asd"
-// 		};
-// 	}
-// });
 
 let myVue = new Vue({
 	el: "#app",

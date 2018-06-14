@@ -11,7 +11,7 @@
 </template>
 
 <script>
-export default {
-  
-}
+	let nodelist = document.getElementsByTagName('li');
+  console.log(nodelist);
+
 </script>
